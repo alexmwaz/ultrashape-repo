@@ -21,3 +21,14 @@ Modeling done in Autodesk Maya
     used for the in class demo
     - added menu screen
     - changed level difficulty, can be finished
+
+### Feb. 16, 2016
+
+#   ultra-juice-demo.apk
+    the android app package for the third iteration of the game
+    used for in class demo
+    - configured menu screen for both stanzas
+    - new level for testing (ii.)
+    
+#   Assets/Scripts/JuiceTurn.cs
+    the main script for the rotations in ii.
