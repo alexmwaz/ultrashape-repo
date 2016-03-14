@@ -5,12 +5,17 @@ public class ChunkPlace : MonoBehaviour
 {
 	public GameObject[] Vertices;
 	public float Treshold;
+	public AudioSource placeClip1;
+	public AudioSource placeClip2;
+	public Material surroundEnd;
 
 	private Collider[] mPieceCollider;
 	private int mCount;
+	private bool Done;
 
 	// Use this for initialization
 	void Start () {
+		Done = false;
 		mCount = 0;
 		mPieceCollider = new Collider[5];
 		mPieceCollider[0] = transform.FindChild("chunk-p1").GetComponent<BoxCollider>();
@@ -34,6 +39,8 @@ public class ChunkPlace : MonoBehaviour
 			transform.FindChild("chunk-e1").gameObject.SetActive(false);
 			transform.FindChild("chunk-e2").gameObject.SetActive(false);
 			transform.FindChild("base").gameObject.SetActive(true);
+			transform.FindChild("OUT").gameObject.GetComponent<Renderer> ().material = surroundEnd;
+			Done = true;
 		}
 	}
 
@@ -74,7 +81,25 @@ public class ChunkPlace : MonoBehaviour
 		default:
 			break;
 		}
+		if (!placeClip1.isPlaying){
+			placeClip1.Play();
+		}
+		if (!placeClip2.isPlaying){
+			placeClip2.Play();
+		}
 		mCount++;
+	}
+
+	public void ButtonSkip() {
+		if (!Done) {
+			swap (0);
+			swap (1);
+			swap (2);
+			swap (3);
+			swap (4);
+		} else {
+			Application.LoadLevel("MENU-D2");
+		}
 	}
 	
 	public void OnFingerTap(Lean.LeanFinger finger)
@@ -97,7 +122,7 @@ public class ChunkPlace : MonoBehaviour
 					if (mPieceCollider[i] == null)
 						continue;
 
-					if (mPieceCollider[i].Raycast(hit, out hitResult, 100.0f)) // see if collide
+					if (mPieceCollider[i].Raycast(hit, out hitResult, 1000.0f)) // see if collide
 					{
 						int j = i * 6;
 						referenceForward = Vertices[j].transform.position - position;

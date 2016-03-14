@@ -8,12 +8,15 @@ public class JuiceTurn : MonoBehaviour {
 	public GameObject rotateHole;
 	public GameObject next;
 	public GameObject juice;
+
 	private Vector3 endRotate;
 	private Gyroscope gyro;
+	private AudioSource placeClip;
 	//private float mAxisAttitude;
 
 	// Use this for initialization
 	void Start () {
+		placeClip = GameObject.Find("AUDIO_SNAP").GetComponent<AudioSource>();
 		gyro = Input.gyro;
 		if(!gyro.enabled)
 		{
@@ -42,6 +45,9 @@ public class JuiceTurn : MonoBehaviour {
 		}
 
 		if (Vector3.Angle (endRotate, gameObject.transform.up) < threshold) {
+			if (!placeClip.isPlaying){
+				placeClip.Play();
+			}
 			rotateHole.SetActive (true);
 			juice.SetActive (true);
 			next.SetActive (true);

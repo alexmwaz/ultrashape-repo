@@ -50,6 +50,9 @@
      <Compile Include="Assets\Vuforia\Editor\Scripts\ExtensionImport.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\PostProcessBuildPlayer.cs" />
      <Compile Include="Assets\Vuforia\Editor\Scripts\Unzipper\SharpZipLibUnzipper.cs" />
+     <None Include="Assets\Materials\HIDER.shader" />
+     <None Include="Assets\Editor\QCAR\TargetsetData\ULTRA_info.xml" />
+     <None Include="Assets\Materials\HideMaskA.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
@@ -58,15 +61,21 @@
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+     <None Include="Assets\Materials\HIDDEN.shader" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\StreamingAssets\QCAR\ImageTargetsB 1.xml" />
      <None Include="Assets\Editor\QCAR\TargetsetData\ImageTargetsB_info.xml" />
+     <None Include="Assets\Editor\QCAR\TargetsetData\ULTRA_FINAL_info.xml" />
+     <None Include="Assets\Materials\CullFront.shader" />
      <None Include="Assets\StreamingAssets\QCAR\ImageTargetsB.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\ULTRA_FINAL_OT.xml" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
-     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\ImageTargetsB_OT.xml" />
      <None Include="Assets\StreamingAssets\QCAR\ULTRA.xml" />
+     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\ULTRA_OT.xml" />
+     <None Include="Assets\Materials\HideMaskB.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\ImageTargetsB_OT.xml" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="Assembly-UnityScript-Editor-firstpass">
  <HintPath>/Users/alexmw/Development/ULTRA/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
